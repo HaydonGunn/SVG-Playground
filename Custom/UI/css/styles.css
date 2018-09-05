@@ -1,0 +1,27 @@
+/* -----------------------------------
+        SVG Elements
+   ----------------------------------- */
+
+.myLine {
+    stroke: black;
+    stroke-linecap: round;
+    stroke-width: 6px;
+}
+
+.c-testsvg {
+    width: 400px;
+    height: 400px;
+}
+
+.c-graph-path {
+    stroke: green;
+    stroke-width: 3px;
+    fill: transparent;
+}
+.c-graph-fill {
+    fill: green;
+    opacity: 0.1;
+}
+.c-graph-point {
+    fill: red;
+}

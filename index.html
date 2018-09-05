@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG test</title>
+    <link href="custom/ui/css/vendor/normalize.css" rel="stylesheet" type="text/css">
+    <link href="custom/ui/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="e-content">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="c-testsvg">
+            <!-- <line x1="25" x2="275" y1="25" y2="375" class="myLine"></line> -->
+            <!-- 
+                M is move to with absolute coordinates
+                m is move to with relative coordinates
+                L is draw a line from the point to this point using absolute coordinates
+                l is draw a line from the point to this point using relative coordinates
+             -->
+            <path class="c-graph-path" d="M10,280 l50,30 l50,50 l50,-20 l50,-30"></path>
+            <path class="c-graph-fill" d="M10,380 L10,280 l50,30 l50,50 l50,-20 l50,-30 L210,380"></path>
+            <circle class="c-graph-point" cx="10" cy="280" r="3"></circle>
+            <circle class="c-graph-point" cx="60" cy="310" r="3"></circle>
+            <circle class="c-graph-point" cx="110" cy="360" r="3"></circle>
+            <circle class="c-graph-point" cx="160" cy="340" r="3"></circle>
+            <circle class="c-graph-point" cx="210" cy="310" r="3"></circle>
+        </svg>
+    </div>
+
+	<script type="module" async src="custom/js/scripts.js"></script>
+</body>
+</html>
+
+
