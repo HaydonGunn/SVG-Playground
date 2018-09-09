@@ -6,7 +6,13 @@
     <link href="custom/ui/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="e-content">
+    <div class="e-content" id="app">
+        <!-- <span v-for="graphPoint in graphs">
+            {{graphPoint.name}}
+            <span v-for="point in graphPoint.points">
+                {{point.x}} test {{point.y}}
+            </span>
+        </span> -->
         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="c-testsvg">
             <!-- <line x1="25" x2="275" y1="25" y2="375" class="myLine"></line> -->
             <!-- 
@@ -15,17 +21,42 @@
                 L is draw a line from the point to this point using absolute coordinates
                 l is draw a line from the point to this point using relative coordinates
              -->
-            <path class="c-graph-path" d="M10,280 l50,30 l50,50 l50,-20 l50,-30"></path>
+            <!-- <path class="c-graph-path" d="M10,280 l50,30 l50,50 l50,-20 l50,-30"></path>
+            <path class="c-graph-fill" d="M10,380 L10,280 l50,30 l50,50 l50,-20 l50,-30 L210,380"></path> -->
+            <!-- <circle class="c-graph-point" cx="10" cy="280" r="3"></circle>
+            <circle class="c-graph-point" cx="60" cy="310" r="3"></circle>
+            <circle class="c-graph-point" cx="110" cy="360" r="3"></circle>
+            <circle class="c-graph-point" cx="160" cy="340" r="3"></circle>
+            <circle class="c-graph-point" cx="210" cy="310" r="3"></circle> -->
+            
+            <g v-for="graph in graphs">
+                <path class="c-graph-path" v-bind:d="graph.pathLine"></path>
+                <path class="c-graph-fill" v-bind:d="graph.pathArea"></path>
+                <circle class="c-graph-point" v-for="point in graph.points" v-bind:cx="point.x" v-bind:cy="point.y" r="3"></circle>
+            </g>
+
+
+            <!-- <path class="c-graph-path" d="M10,280 l50,30 l50,50 l50,-20 l50,-30"></path>
             <path class="c-graph-fill" d="M10,380 L10,280 l50,30 l50,50 l50,-20 l50,-30 L210,380"></path>
             <circle class="c-graph-point" cx="10" cy="280" r="3"></circle>
             <circle class="c-graph-point" cx="60" cy="310" r="3"></circle>
             <circle class="c-graph-point" cx="110" cy="360" r="3"></circle>
             <circle class="c-graph-point" cx="160" cy="340" r="3"></circle>
             <circle class="c-graph-point" cx="210" cy="310" r="3"></circle>
+
+            <path class="c-graph-path" d="M10,180 l50,30 l50,50 l50,-20 l50,-30"></path>
+            <path class="c-graph-fill" d="M10,380 L10,180 l50,30 l50,50 l50,-20 l50,-30 L210,380"></path>
+            <circle class="c-graph-point" cx="10" cy="180" r="3"></circle>
+            <circle class="c-graph-point" cx="60" cy="210" r="3"></circle>
+            <circle class="c-graph-point" cx="110" cy="260" r="3"></circle>
+            <circle class="c-graph-point" cx="160" cy="240" r="3"></circle>
+            <circle class="c-graph-point" cx="210" cy="210" r="3"></circle> -->
         </svg>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="module" async src="custom/js/scripts.js"></script>
+	<script type="text/javascript" src="custom/js/modules/graphs.js"></script>
 </body>
 </html>
 
